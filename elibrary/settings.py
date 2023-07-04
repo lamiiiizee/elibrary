@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
+from decouple import config
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -34,11 +36,15 @@ INSTALLED_APPS = [
     "app",
     "django.contrib.admin",
     "registration",
+    "admin_interface",
+    "colorfield",
     "django.contrib.auth",
     "django.contrib.contenttypes",
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "crispy_forms",
+    "crispy_bootstrap5",
 ]
 
 MIDDLEWARE = [
@@ -115,6 +121,13 @@ USE_TZ = True
 ACCOUNT_ACTIVATION_DAYS = 7 # One-week activation window; you may, of course, use a different value.
 REGISTRATION_AUTO_LOGIN = True # Automatically log the user in.
 
+
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+CRISPY_TEMPLATE_PACK = "bootstrap5"
+
+X_FRAME_OPTIONS = "SAMEORIGIN"
+SILENCED_SYSTEM_CHECKS = ["security.W019"]
+
 USE_L10N = False
 DATE_INPUT_FORMATS = (
     "%d/%m/%Y",
@@ -153,3 +166,27 @@ STATIC_ROOT = BASE_DIR / "assets"
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+
+
+
+ACCOUNT_ACTIVATION_DAYS = 7
+REGISTRATION_EMAIL_SUBJECT_PREFIX = ''
+
+REGISTRATION_OPEN = True
+LOGIN_URL = '/app/accounts/login/'
+LOGOUT_URL = '/app/accounts/logout/'
+LOGIN_REDIRECT_URL = '/'
+
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+EMAIL_HOST = "smtp-relay.sendinblue.com"
+EMAIL_PORT = "587"
+EMAIL_HOST_USER = "nayelprjuae@gmail.com"
+EMAIL_HOST_PASSWORD = "xyU1cYphDd5mIGHg"
+EMAIL_USE_TLS = True
+
+DEFAULT_FROM_EMAIL = "kfaamardesubombhack@gmail.com"
+DEFAULT_BCC_EMAIL= "kfaamardesubombhack@gmail.com"
+DEFAULT_REPLY_TO_EMAIL = "kfaamardesubombhack@gmail.com"
+SERVER_EMAIL = "kfaamardesubombhack@gmail.com"
+ADMIN_EMAIL = "kfaamardesubombhack@gmail.com"

@@ -10,7 +10,6 @@ class IndexView(TemplateView):
 class chartjsView(TemplateView):
     template_name='app/charts/chartjs.html'
 
-
 class buttonsView(TemplateView):
     template_name='app/ui-features/buttons.html'
     
@@ -31,7 +30,6 @@ class blankPageView(TemplateView):
 
 class error404View(TemplateView):
     template_name='app/samples/error-404.html'
-
 
 class error500View(TemplateView):
     template_name='app/samples/error-500.html'

@@ -22,28 +22,30 @@
 </head>
 
 <body>
-
-
     <div class="container-scroller">
-
+        <!-- partial:partials/_navbar.html -->
+        {% include 'app/partials/_proBanner.html' %}
         <!-- partial:partials/_navbar.html -->
         {% include 'app/partials/_navbar.html' %}
-
         <!-- partial -->
         <div class="container-fluid page-body-wrapper">
+
             <!-- partial:partials/_sidebar.html -->
             {% include 'app/partials/_sidebar.html' %}
+            <div class="main-panel">
+                <!-- partial -->
 
-            <!-- partial -->
+                <!-- container-scroller -->
+                {% block content %}
 
-            <!-- container-scroller -->
-            {% block content %}
+                {% endblock %}
+                {% include 'app/partials/_footer.html' %}
 
-            {% endblock %}
+            </div>
         </div>
-            {% include 'app/partials/_footer.html' %}
     </div>
-    
+
+
     <!-- plugins:js -->
     <script src="/static/app/vendors/js/vendor.bundle.base.js"></script>
     <!-- endinject -->

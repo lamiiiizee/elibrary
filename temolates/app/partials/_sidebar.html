@@ -1,3 +1,4 @@
+
 <nav class="sidebar sidebar-offcanvas" id="sidebar">
   <ul class="nav">
     <li class="nav-item nav-profile">
@@ -66,8 +67,8 @@
       <div class="collapse" id="general-pages">
         <ul class="nav flex-column sub-menu">
           <li class="nav-item"> <a class="nav-link" href="{% url 'app:Blank_Page' %}"> Blank Page </a></li>
-          <li class="nav-item"> <a class="nav-link" href="#"> Login </a></li>
-          <li class="nav-item"> <a class="nav-link" href="pages/samples/register.html"> Register </a></li>
+          <li class="nav-item"> <a class="nav-link" href="{% url 'auth_login' %}"> Login </a></li>
+          <li class="nav-item"> <a class="nav-link" href="{% url 'registration_register' %}"> Register </a></li>
           <li class="nav-item"> <a class="nav-link" href="{% url 'app:error404' %}"> 404 </a></li>
           <li class="nav-item"> <a class="nav-link" href="{% url 'app:error500' %}"> 500 </a></li>
         </ul>

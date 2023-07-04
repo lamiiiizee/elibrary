@@ -2,12 +2,13 @@
 {% load i18n %}
 
 {% block title %}{% trans "Register for an account" %}{% endblock %}
-
+{% load crispy_forms_tags %}
 {% block content %}
+<h4>Hello! let's get start register</h4>
 <form method="post" action="">
     {% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" value="{% trans 'Submit' %}" />
+    {{ form|crispy }}
+    <input type="submit" class="btn btn-primary active" value="{% trans 'Submit' %}" />
 </form>
 {% endblock %}
 
@@ -18,8 +19,8 @@ Used to show the form users will fill out to register. By default, has
 the following context:
 
 ``form``
-    The registration form. This will be an instance of some subclass
-    of ``django.forms.Form``; consult `Django's forms documentation
-    <http://docs.djangoproject.com/en/dev/topics/forms/>`_ for
-    information on how to display this in a template.
+The registration form. This will be an instance of some subclass
+of ``django.forms.Form``; consult `Django's forms documentation
+<http: //docs.djangoproject.com/en/dev/topics/forms />`_ for
+information on how to display this in a template.
 {% endcomment %}
