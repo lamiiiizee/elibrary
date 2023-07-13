@@ -7,29 +7,29 @@ from . models import Book
 class IndexView(TemplateView):
     template_name='app/index.html'
 
-class chartjsView(TemplateView):
+class ChartjsView(TemplateView):
     template_name='app/charts/chartjs.html'
 
-class buttonsView(TemplateView):
+class ButtonsView(TemplateView):
     template_name='app/ui-features/buttons.html'
     
-class typographyView(TemplateView):
+class TypographyView(TemplateView):
     template_name='app/ui-features/typography.html'
 
-class iconsView(TemplateView):
+class IconsView(TemplateView):
     template_name='app/icons/mdi.html'
 
-class formsView(TemplateView):
+class FormsView(TemplateView):
     template_name='app/forms/basic_elements.html'
 
-class tableView(TemplateView):
+class TableView(TemplateView):
     template_name='app/tables/basic-table.html'
 
-class blankPageView(TemplateView):
+class BlankPageView(TemplateView):
     template_name='app/samples/blank-page.html'
 
-class error404View(TemplateView):
+class Error404View(TemplateView):
     template_name='app/samples/error-404.html'
 
-class error500View(TemplateView):
+class Error500View(TemplateView):
     template_name='app/samples/error-500.html'
