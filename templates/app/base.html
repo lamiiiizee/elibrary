@@ -30,19 +30,21 @@
         <!-- partial:partials/_navbar.html -->
         {% include 'app/partials/_navbar.html' %}
         <!-- partial -->
+        <!-- <br><br> -->
         <div class="container-fluid page-body-wrapper">
 
             <!-- partial:partials/_sidebar.html -->
             {% include 'app/partials/_sidebar.html' %}
             <div class="main-panel">
                 <!-- partial -->
+                <div class="content-wrapper">
+                    <!-- container-scroller -->
+                    {% block content %}
 
-                <!-- container-scroller -->
-                {% block content %}
+                    {% endblock %}
+                    {% include 'app/partials/_footer.html' %}
 
-                {% endblock %}
-                {% include 'app/partials/_footer.html' %}
-
+                </div>
             </div>
         </div>
     </div>
@@ -63,7 +65,14 @@
     <!-- Custom js for this page -->
     <script src="/static/app/js/dashboard.js"></script>
     <script src="/static/app/js/todolist.js"></script>
+    {% block chartjs %} {% endblock %}
     <!-- End custom js for this page -->
+
+    <script>
+        function closeWindow() {
+          window.close();
+        }
+        </script> 
 </body>
 
 </html>

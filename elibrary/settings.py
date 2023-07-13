@@ -171,18 +171,21 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 
 ACCOUNT_ACTIVATION_DAYS = 7
-REGISTRATION_EMAIL_SUBJECT_PREFIX = ''
+REGISTRATION_EMAIL_SUBJECT_PREFIX = '/email_template/email_template.html'
+SEND_ACTIVATION_EMAIL = False
 
 REGISTRATION_OPEN = True
-LOGIN_URL = '/app/accounts/login/'
-LOGOUT_URL = '/app/accounts/logout/'
+LOGIN_URL = '/accounts/login/'
+LOGOUT_URL = '/accounts/logout/'
 LOGIN_REDIRECT_URL = '/'
 
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
-EMAIL_HOST = "smtp-relay.sendinblue.com"
+EMAIL_HOST = "smtp-relay.brevo.com"
 EMAIL_PORT = "587"
-EMAIL_HOST_USER = "nayelprjuae@gmail.com"
-EMAIL_HOST_PASSWORD = "xyU1cYphDd5mIGHg"
+# EMAIL_HOST_USER = "nayelprjuae@gmail.com"
+# EMAIL_HOST_PASSWORD = "xyU1cYphDd5mIGHg"
+EMAIL_HOST_USER = "kfaamardesubombhack@gmail.com"
+EMAIL_HOST_PASSWORD = "xsmtpsib-b3d7a669d041ea68dcc45ac267d33bcdcd7eacb5da6348c0a9c06f2f1052aacf-ITfYVMUZcQCtPdmD"
 EMAIL_USE_TLS = True
 
 DEFAULT_FROM_EMAIL = "kfaamardesubombhack@gmail.com"
@@ -190,3 +193,6 @@ DEFAULT_BCC_EMAIL= "kfaamardesubombhack@gmail.com"
 DEFAULT_REPLY_TO_EMAIL = "kfaamardesubombhack@gmail.com"
 SERVER_EMAIL = "kfaamardesubombhack@gmail.com"
 ADMIN_EMAIL = "kfaamardesubombhack@gmail.com"
+
+
+# xsmtpsib-b3d7a669d041ea68dcc45ac267d33bcdcd7eacb5da6348c0a9c06f2f1052aacf-ITfYVMUZcQCtPdmD  smtp-relay.brevo.com
