@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 # Create your models here.
 from django.urls import reverse_lazy
+import django_tables2 as tables
 
 class BookAuthor(models.Model):
     name = models.CharField(max_length=100)
@@ -54,3 +55,7 @@ class FavoriteBook(models.Model):
     def __str__(self):
         return str(self.user)
     
+
+class SimpleTable(tables.Table):
+    class Meta:
+        model = Simple

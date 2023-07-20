@@ -10,7 +10,7 @@
         </div>
         <div class="nav-profile-text d-flex flex-column">
           <span class="font-weight-bold mb-2">{{user.username}}</span>
-          <span class="text-secondary text-small">Project Manager</span>
+          <span class="text-secondary text-small"><small>{{user.email}}</small></span>
         </div>
         <i class="mdi mdi-bookmark-check text-success nav-profile-badge"></i>
       </a>
@@ -30,6 +30,12 @@
     <li class="nav-item">
       <a class="nav-link" href="{% url 'app:auther_list' %}">
         <span class="menu-title">Auther list</span>
+        <i class="mdi mdi-account-multiple-plus menu-icon"></i>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'app:user_list' %}">
+        <span class="menu-title">user list</span>
         <i class="mdi mdi-account-multiple-plus menu-icon"></i>
       </a>
     </li>

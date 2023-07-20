@@ -3,6 +3,7 @@ from .models import Book
 from .models import BookAuthor
 from .models import FavoriteBook
 # Register your models here.
+from django.contrib.auth.models import User
 
 
 

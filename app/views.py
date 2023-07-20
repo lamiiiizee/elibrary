@@ -6,6 +6,8 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import ListView, DetailView, TemplateView
 from django.views.generic.edit import FormView, CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
+from django.contrib.auth.models import User
+from django.contrib.auth.hashers import make_password
 
 # Create your views here.
 
@@ -47,14 +49,22 @@ class Error500View(TemplateView):
 
 class BookCreateView(LoginRequiredMixin ,CreateView):
     model = Book
-    template_name='app/viewstemplate/createview.html'
+    template_name='app/book_view/createview.html'
     fields = "__all__"
     # success_url= reverse_lazy('app:book_list',)
-    
+
+class BookTableView(LoginRequiredMixin ,ListView):
+    model = Book
+    template_name='app/book_view/book_table.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['title'] = "Book table"
+        return context
     
 class BookList(LoginRequiredMixin ,ListView):
     model = Book
-    template_name='app/viewstemplate/listview.html'
+    template_name='app/book_view/listview.html'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -63,16 +73,18 @@ class BookList(LoginRequiredMixin ,ListView):
 
 class BookDetialView(LoginRequiredMixin ,DetailView):
     model = Book
-    template_name='app/viewstemplate/detialview.html'
+    template_name='app/book_view/detialview.html'
 
 class BookUpdateView(LoginRequiredMixin ,UpdateView):
     model = Book
-    template_name='app/viewstemplate/updateview.html'
+    template_name='app/book_view/updateview.html'
     fields = "__all__"
+    success_url= reverse_lazy('app:book_list',)
+
 
 class BookDeleteView(LoginRequiredMixin ,DeleteView):
     model = Book
-    template_name='app/viewstemplate/deleteview.html'
+    template_name='app/book_view/deleteview.html'
     success_url= reverse_lazy('app:book_list',)
 
 # book views end
@@ -82,14 +94,14 @@ class BookDeleteView(LoginRequiredMixin ,DeleteView):
 # book author views start
 class AutherCreateView(LoginRequiredMixin ,CreateView):
     model = BookAuthor
-    template_name='app/autherviews/createview.html'
+    template_name='app/auther_views/createview.html'
     fields = "__all__"
     # success_url= reverse_lazy('app:book_list',)
     
     
 class AutherListView(LoginRequiredMixin ,ListView):
     model = BookAuthor
-    template_name='app/autherviews/listview.html'
+    template_name='app/auther_views/listview.html'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -98,15 +110,58 @@ class AutherListView(LoginRequiredMixin ,ListView):
 
 class AuthorDetialView(LoginRequiredMixin ,DetailView):
     model = BookAuthor
-    template_name='app/autherviews/detialview.html'
+    template_name='app/auther_views/detialview.html'
 
 class AuthorUpdateView(LoginRequiredMixin ,UpdateView):
     model = BookAuthor
-    template_name='app/autherviews/updateview.html'
+    template_name='app/auther_views/updateview.html'
     fields = "__all__"
+    success_url= reverse_lazy('app:auther_list',)
+
 
 class AuthorDeleteView(LoginRequiredMixin ,DeleteView):
     model = BookAuthor
-    template_name='app/autherviews/deleteview.html'
+    template_name='app/auther_views/deleteview.html'
     success_url= reverse_lazy('app:auther_list',)
-# book author views start
+# book author views end
+
+
+
+# book user views start
+class UserCreateView(LoginRequiredMixin ,CreateView):
+    model = User
+    template_name='app/user_view/createview.html'
+    fields = ('username','email','password')
+    success_url= reverse_lazy('app:user_list',)
+
+    def form_valid(self, form):
+        form.instance.password = make_password(form.cleaned_data['password'])
+        return super().form_valid(form)
+    
+    # def form_valid(self, form):
+    #     user = form.save(commit=False)
+    #     user.set_password(form.cleaned_data['password'])
+    #     user.save()
+    #     return super().form_valid(form)
+
+    
+class UserListView(LoginRequiredMixin ,ListView):
+    model = User
+    template_name='app/user_view/listview.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['title'] = "user"
+        return context
+
+class UserUpdateView(LoginRequiredMixin ,UpdateView):
+    model = User
+    template_name='app/user_view/updateview.html'
+    fields = ('username','email','password')
+    success_url= reverse_lazy('app:user_list',)
+
+class UserDeleteView(LoginRequiredMixin ,DeleteView):
+    model = User
+    template_name='app/user_view/deleteview.html'
+    success_url= reverse_lazy('app:user_list',)
+# book user views end

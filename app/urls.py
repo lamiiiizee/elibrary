@@ -20,6 +20,7 @@ urlpatterns = [
 
      path("book_create/", views.BookCreateView.as_view(), name="book_create"),
      path("book_list/", views.BookList.as_view(), name="book_list"),
+     path("book_table/", views.BookTableView.as_view(), name="book_table"),
      path("book_detial/<str:pk>/", views.BookDetialView.as_view(), name="book_detial"),
      path("book_update/<str:pk>/", views.BookUpdateView.as_view(), name="book_update"),
      path("book_delete/<str:pk>/", views.BookDeleteView.as_view(), name="book_delete"),
@@ -29,4 +30,10 @@ urlpatterns = [
      path("auther_detial/<str:pk>/", views.AuthorDetialView.as_view(), name="auther_detial"),
      path("auther_update/<str:pk>/", views.AuthorUpdateView.as_view(), name="auther_update"),
      path("auther_delete/<str:pk>/", views.AuthorDeleteView.as_view(), name="auther_delete"),
+
+     path("user_create/", views.UserCreateView.as_view(), name="user_create"),
+     path("user_list/", views.UserListView.as_view(), name="user_list"),
+     # path("user_detial/<str:pk>/", views.AuthorDetialView.as_view(), name="auther_detial"),
+     path("user_update/<str:pk>/", views.UserUpdateView.as_view(), name="user_update"),
+     path("user_delete/<str:pk>/", views.UserDeleteView.as_view(), name="user_delete"),
 ]

@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     "registration",
     "admin_interface",
     "colorfield",
+    "django_tables2",
     "django.contrib.auth",
     "django.contrib.contenttypes",
     "django.contrib.sessions",
@@ -182,10 +183,10 @@ LOGIN_REDIRECT_URL = '/'
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 EMAIL_HOST = "smtp-relay.brevo.com"
 EMAIL_PORT = "587"
-# EMAIL_HOST_USER = "nayelprjuae@gmail.com"
-# EMAIL_HOST_PASSWORD = "xyU1cYphDd5mIGHg"
-EMAIL_HOST_USER = "kfaamardesubombhack@gmail.com"
-EMAIL_HOST_PASSWORD = "xsmtpsib-b3d7a669d041ea68dcc45ac267d33bcdcd7eacb5da6348c0a9c06f2f1052aacf-ITfYVMUZcQCtPdmD"
+EMAIL_HOST_USER = "nayelprjuae@gmail.com"
+EMAIL_HOST_PASSWORD = "xyU1cYphDd5mIGHg"
+# EMAIL_HOST_USER = "kfaamardesubombhack@gmail.com"
+# EMAIL_HOST_PASSWORD = "xsmtpsib-b3d7a669d041ea68dcc45ac267d33bcdcd7eacb5da6348c0a9c06f2f1052aacf-ITfYVMUZcQCtPdmD"
 EMAIL_USE_TLS = True
 
 DEFAULT_FROM_EMAIL = "kfaamardesubombhack@gmail.com"
