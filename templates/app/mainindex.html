@@ -1,26 +1,14 @@
 <!DOCTYPE html>
 <html>
-
-<body>
-
-    <h1>The Window Object</h1>
-    <h2>The open() and close() Methods</h2>
-
-    <button onclick="openWin()">Open "myWindow"</button>
-    <button onclick="closeWin()">Close "myWindow"</button>
-
+  <head>
+    <title>Dashboard</title>
+  </head>
+  <body onload="openWin()">
     <script>
-        let myWindow;
-
-        function openWin() {
-            myWindow = window.open("http://127.0.0.1:8000/Dashboard", "", "width=200,height=100");
-        }
-
-        function closeWin() {
-            myWindow.close();
-        }
+      let myWindow;
+      function openWin() {
+        myWindow = window.open("http://127.0.0.1:8000/Dashboard", "", "width=" + screen.availWidth + ",height=" + screen.availHeight);
+      }
     </script>
-
-</body>
-
+  </body>
 </html>

@@ -6,8 +6,8 @@ app_name = "app"
 
 urlpatterns = [
     
-     # path("Dashboard", views.MainIndexView.as_view(), name="index"),
-     path("", views.IndexView.as_view(), name="index"),
+     path("", views.MainIndexView.as_view(), name="index"),
+     path("Dashboard", views.IndexView.as_view(), name="Dashboard"),
      path("chart/", views.ChartjsView.as_view(), name="chartjs"),
      path("buttons/", views.ButtonsView.as_view(), name="buttons"),
      path("typography/", views.TypographyView.as_view(), name="typography"),
